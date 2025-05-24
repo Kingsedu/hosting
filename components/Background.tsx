@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Background = () => {
   const [currentService, setCurrentService] = useState(0);
   const [currentLetter, setCurrentLetter] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [isLetterComplete, setIsLetterComplete] = useState(false);
 
   const services = [
@@ -16,6 +17,8 @@ const Background = () => {
         "/images/img/service-3.png",
       ],
       background: "/images/img/background-3.jpg",
+      description:
+        "Comprehensive engineering solutions for the oil and gas industry, including design, maintenance, and optimization services.",
     },
     {
       name: "PROCUREMENT",
@@ -25,6 +28,8 @@ const Background = () => {
         "/images/img/procument-3.gif",
       ],
       background: "/images/img/background-five.jpg",
+      description:
+        "End-to-end procurement services ensuring quality equipment and materials for your operations.",
     },
     {
       name: "TRAINING",
@@ -34,6 +39,8 @@ const Background = () => {
         "/images/img/training-three.jpeg",
       ],
       background: "/images/img/background-2.webp",
+      description:
+        "Professional training programs designed to enhance skills and safety in the oil and gas sector.",
     },
     {
       name: "ROPE-ACCESS",
@@ -43,9 +50,12 @@ const Background = () => {
         "/images/img/rope-access-2.jpg",
       ],
       background: "/images/img/background-four.avif",
+      description:
+        "Specialized rope access services for maintenance, inspection, and construction in challenging environments.",
     },
   ];
 
+  // Handle letter animation
   useEffect(() => {
     const currentServiceName = services[currentService].name;
     setIsLetterComplete(false);
@@ -65,10 +75,21 @@ const Background = () => {
     return () => clearInterval(letterInterval);
   }, [currentService]);
 
+  // Handle image carousel
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % 3);
+    }, 2000);
+
+    return () => clearInterval(imageInterval);
+  }, [currentService]);
+
+  // Handle service change
   useEffect(() => {
     if (isLetterComplete) {
       const timer = setTimeout(() => {
         setCurrentService((prev) => (prev + 1) % services.length);
+        setCurrentImage(0); // Reset image index when service changes
       }, 5000);
 
       return () => clearTimeout(timer);
@@ -116,92 +137,64 @@ const Background = () => {
         />
       </AnimatePresence>
       <div className="absolute top-0 left-0 w-full h-full bg-[#00000080]"></div>
-      <div className="flex flex-col min-h-screen">
-        {/* Company Name Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center py-16 mt-16 relative z-20"
-        >
-          <h1 className="text-5xl font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">
-            Welcome to ME
-            <span className="text-red-400 drop-shadow-[0_0_8px_rgba(255,123,0,0.8)]">
-              CN
-            </span>
-            OMIT Oil and Gas Services
-          </h1>
-          <h2 className="text-2xl mt-4 text-white relative z-20">
-            Where we believe in 3T's:{" "}
-            <span className="text-yellow-300 font-semibold drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">
-              Trust
-            </span>
-            ,{" "}
-            <span className="text-yellow-300 font-semibold drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">
-              Talent
-            </span>
-            , and{" "}
-            <span className="text-yellow-300 font-semibold drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">
-              Technology
-            </span>
-          </h2>
-          <h3 className="text-xl mt-2 font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">
-            Our operators are forged in the field — powered by experience,
-            defined by expertise.
-          </h3>
-        </motion.div>
 
-        {/* Services Section */}
-        <div className="flex-1 flex flex-col items-center justify-center px-8 pb-16 relative z-10">
-          <div className="relative w-full max-w-6xl">
-            {/* Service Name */}
-            <div className="text-center mb-12">
-              <h4 className="text-3xl font-bold text-white mb-4">
-                Our Services
-              </h4>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 inline-block">
-                {renderServiceLetters()}
-              </div>
-            </div>
+      {/* Split Screen Layout - Modified for responsiveness */}
+      <div className="relative z-10 min-h-screen flex flex-col lg:flex-row">
+        {/* Left Side - Text Content */}
+        <div className="w-full lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-left"
+          >
+            <h1 className="text-4xl lg:text-5xl font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)] mb-8">
+              Welcome to ME
+              <span className="text-red-400 drop-shadow-[0_0_8px_rgba(255,123,0,0.8)]">
+                CN
+              </span>
+              OMIT
+            </h1>
+            <h2 className="text-xl lg:text-2xl text-white mb-6">
+              Where we believe in 3T's:{" "}
+              <span className="text-yellow-300 font-semibold">Trust</span>,{" "}
+              <span className="text-yellow-300 font-semibold">Talent</span>, and{" "}
+              <span className="text-yellow-300 font-semibold">Technology</span>
+            </h2>
 
-            {/* Service Images */}
-            <div className="relative h-[600px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentService}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {/* Left Image */}
-                    <motion.img
-                      src={services[currentService].images[0]}
-                      alt="Service"
-                      className="absolute left-[-5%] w-80 h-80 object-cover rounded-lg shadow-2xl transform -rotate-6"
-                      style={{ zIndex: 1 }}
-                    />
-                    {/* Center Image */}
-                    <motion.img
-                      src={services[currentService].images[1]}
-                      alt="Service"
-                      className="absolute w-[500px] h-[500px] object-cover rounded-lg shadow-2xl"
-                      style={{ zIndex: 2 }}
-                    />
-                    {/* Right Image */}
-                    <motion.img
-                      src={services[currentService].images[2]}
-                      alt="Service"
-                      className="absolute right-[-5%] w-80 h-80 object-cover rounded-lg shadow-2xl transform rotate-6"
-                      style={{ zIndex: 1 }}
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+            <h2 className="text-2xl lg:text-3xl font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)] mb-4">
+              What MECNOMIT is All About
+            </h2>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-6">
+              {renderServiceLetters()}
             </div>
-          </div>
+            <p className="text-white text-base lg:text-lg mt-4">
+              {services[currentService].description}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Right Side - Image Carousel - Modified for responsiveness */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-12 lg:pt-32 order-last">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${currentService}-${currentImage}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-full max-w-[300px] lg:max-w-none h-[200px] lg:h-[600px] mx-auto"
+            >
+              <img
+                src={services[currentService].images[currentImage]}
+                alt={`${services[currentService].name} - Image ${
+                  currentImage + 1
+                }`}
+                className="w-full h-full object-cover rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
