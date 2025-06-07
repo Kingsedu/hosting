@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const CoreValues = () => {
   const values = [
     {
-      title: "Safety First",
+      title: "Mutual Respect",
       description:
-        "We prioritize the safety and well-being of our team members, clients, and the environment in everything we do.",
+        "We value and respecting each individual's contributions and perpectives",
       icon: "🛡️",
     },
     {
@@ -17,27 +17,38 @@ const CoreValues = () => {
       icon: "⭐",
     },
     {
-      title: "Experience",
+      title: "Commitment",
       description:
-        "Our team brings decades of combined experience in the oil and gas industry, ensuring reliable and efficient solutions.",
+        "We demonstrate dedication in our mission, clients and community",
       icon: "📚",
     },
+
     {
-      title: "Inclusive Environment",
+      title: "Nuturing",
       description:
-        "We foster a diverse and inclusive workplace where everyone has the opportunity to grow, learn, and succeed.",
+        "We support the personal and professional growth of our team members",
+      icon: "💡",
+    },
+    {
+      title: "Openness",
+      description: "We encourage open-mindedness and receptivity to new idea",
       icon: "🤝",
     },
     {
-      title: "Innovation",
-      description:
-        "We embrace new technologies and methodologies to deliver cutting-edge solutions to our clients.",
-      icon: "💡",
+      title: "Meritocracy",
+      description: "We reward talent and hardwork",
+      icon: "⚖️",
     },
     {
       title: "Integrity",
       description:
-        "We conduct our business with honesty, transparency, and ethical practices at all times.",
+        "We uphold honersty, ethics and transparancy in all our dealings",
+      icon: "⚖️",
+    },
+    {
+      title: "Trust",
+      description:
+        "We build and mainntain trust through reliability and consistent performance",
       icon: "⚖️",
     },
   ];

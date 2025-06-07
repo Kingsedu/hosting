@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const services = [
@@ -54,9 +55,10 @@ const ServiceCarousel = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div
+              <Link
+                href="/services"
                 key={service.title}
-                className="relative aspect-[16/9] rounded-lg overflow-hidden backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg group transition-all duration-300 hover:shadow-[0_0_15px_rgba(234,179,8,0.5)] hover:border-amber-400"
+                className="block relative aspect-[16/9] rounded-lg overflow-hidden backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg group transition-all duration-300 hover:shadow-[0_0_15px_rgba(234,179,8,0.5)] hover:border-amber-400"
               >
                 <Image
                   src={service.image}
@@ -80,7 +82,7 @@ const ServiceCarousel = () => {
                   <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-amber-400/20 via-yellow-400/20 to-amber-400/20 blur-sm"></div>
                   <div className="absolute inset-0 rounded-lg border-2 border-amber-400/50"></div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

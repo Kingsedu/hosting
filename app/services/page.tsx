@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ServiceCarousel from "@/components/ServiceCarousel";
+import EngineeringService from "@/components/EngineeringService";
 
 const Services = () => {
   return (
@@ -27,8 +28,28 @@ const Services = () => {
 
         {/* Service Carousel */}
         <ServiceCarousel />
+        <h1 className="text-center font-semibold text-5xl my-8 mt-[30px]">
+          Engineering Services
+        </h1>
 
+        <p className="text-center text-2xl text-gray-500">
+          At{" "}
+          <span className="text-yellow-300">
+            Me<span className="text-red-500">cn</span>omit
+          </span>{" "}
+          Limited, we provide innovative, reliable, specialized and
+          cost-effective engineering solutions tailored to meet the evolving
+          needs of clients.Leverage a blend of technical expertise and advanced
+          technologies, our multidisciplinary team of skilled engineers and
+          techical experts deliver services that promotes operationa;
+          reliability, regulatory compliance, and extended asset life across
+          critical infrastructure and industrial facilities
+        </p>
         {/* Detailed Services Section */}
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center mt-8">
+          Our Core Service Include
+        </h1>
+        <EngineeringService />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
           {[
             {

@@ -25,9 +25,21 @@ const companies = [
     logo: "/images/companies/total.png",
   },
   {
-    name: "Agip",
-    logo: "/images/companies/agip.png",
+    name: "AGFC",
+    logo: "/images/companies/companylogo-one.png",
   },
+  {
+    name: "Aradel",
+    logo: "/images/companies/companylogothree.png",
+  },
+  {
+    name: "NLNG",
+    logo: "/images/companies/companylogotwo.png",
+  },
+  // {
+  //   name: "Agip",
+  //   logo: "/images/companies/agip.png",
+  // },
   // {
   //   name: "Addax",
   //   logo: "/images/companies/addax.png",

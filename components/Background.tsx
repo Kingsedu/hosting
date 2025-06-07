@@ -12,9 +12,12 @@ const Background = () => {
     {
       name: "ENGINEERING SERVICE",
       images: [
-        "/images/img/service.jpg",
-        "/images/img/service-2.jpg",
-        "/images/img/service-3.png",
+        // "/images/img/service.jpg",
+        // "/images/img/service-2.jpg",
+        "/ndt-one.jpg",
+        // "/images/img/service-3.png",
+        "/engineering_service.jpg",
+        "/engineering.jpg",
       ],
       background: "/images/img/background-3.jpg",
       description:
@@ -23,9 +26,13 @@ const Background = () => {
     {
       name: "PROCUREMENT",
       images: [
-        "/images/img/procument-one.jpeg",
-        "/images/img/procument-2.jpeg",
-        "/images/img/procument-3.gif",
+        // "/images/img/procument-one.jpeg",
+        // "/images/img/procument-2.jpeg",
+        // "/images/img/procument-3.gif",
+
+        "/procument-one.jpg",
+        "/procurementthree.jpg",
+        "/procurementwo.jpg",
       ],
       background: "/images/img/background-five.jpg",
       description:
@@ -36,7 +43,8 @@ const Background = () => {
       images: [
         "/images/img/training-one.jpeg",
         "/images/img/training-two.jpg",
-        "/images/img/training-three.jpeg",
+        "/training.jpg",
+        // "/images/img/training-three.jpeg",
       ],
       background: "/images/img/background-2.webp",
       description:
@@ -45,9 +53,12 @@ const Background = () => {
     {
       name: "ROPE-ACCESS",
       images: [
-        "/images/img/rope-access-one.jpg",
-        "/images/img/rope-access-3.jpg",
+        // "/images/img/rope-access-one.jpg",
+        // "/images/img/rope-access-3.jpg",
         "/images/img/rope-access-2.jpg",
+        "/rope-access.jpg",
+        "/rope-aceecee.jpg",
+        "/rope-cesss.jpg",
       ],
       background: "/images/img/background-four.avif",
       description:
@@ -156,10 +167,19 @@ const Background = () => {
               OMIT
             </h1>
             <h2 className="text-xl lg:text-2xl text-white mb-6">
-              Where we believe in 3T's:{" "}
-              <span className="text-yellow-300 font-semibold">Trust</span>,{" "}
-              <span className="text-yellow-300 font-semibold">Talent</span>, and{" "}
-              <span className="text-yellow-300 font-semibold">Technology</span>
+              At{" "}
+              <span className="text-yellow-300 font-semibold">
+                ME<span className="text-red-400 font-semibold">CN</span>OMIT
+              </span>
+              , we are driven by three core principles:
+              <span className="text-yellow-300 font-semibold">
+                Safety
+              </span>,{" "}
+              <span className="text-yellow-300 font-semibold">Solution</span>,
+              and <span className="text-yellow-300 font-semibold">Service</span>
+              . We priorities safety in every project, deliver tailored
+              solutions to complex challenges, and provide exceptional service
+              that builds lasting partnership
             </h2>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)] mb-4">
