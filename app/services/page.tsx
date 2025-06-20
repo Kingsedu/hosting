@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import EngineeringService from "@/components/EngineeringService";
+import DetailsEngineeringService from "@/components/DetailsEngineeringService";
 
 const Services = () => {
   return (
@@ -34,7 +35,7 @@ const Services = () => {
 
         <p className="text-center text-2xl text-gray-500">
           At{" "}
-          <span className="text-yellow-300">
+          <span className="text-black">
             Me<span className="text-red-500">cn</span>omit
           </span>{" "}
           Limited, we provide innovative, reliable, specialized and
@@ -50,6 +51,7 @@ const Services = () => {
           Our Core Service Include
         </h1>
         <EngineeringService />
+        <DetailsEngineeringService />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
           {[
             {
@@ -63,11 +65,11 @@ const Services = () => {
               title: "Procurement",
               description: "Strategic procurement and supply chain management",
               icon: "📦",
-              image: "/images/img/procument-one.jpeg",
+              image: "/procurementthree.jpg",
             },
             {
-              title: "Construction",
-              description: "Expert construction and installation services",
+              title: "NDT Testing",
+              description: "Expert in installation services and NDT testing",
               icon: "🏗️",
               image: "/images/img/service-2.jpg",
             },
@@ -78,13 +80,14 @@ const Services = () => {
               image: "/images/img/service-3.png",
             },
             {
-              title: "Quality Control",
-              description: "Rigorous quality assurance and control processes",
+              title: "Training",
+              description:
+                "Rigorous quality assurance and control processes training",
               icon: "✅",
               image: "/images/img/training-one.jpeg",
             },
             {
-              title: "Training",
+              title: "Training II",
               description: "Professional training and consultancy services",
               icon: "📚",
               image: "/images/img/training-two.jpg",

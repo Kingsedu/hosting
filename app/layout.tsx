@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Memoic service",
+  title: "Mecnomit service",
   description: "trust, talent and Technology,",
   icons: {
     icon: [

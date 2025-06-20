@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const companies = [
-  {
-    name: "NNPC",
-    logo: "/images/companies/nnpc.png",
-  },
+  // {
+  //   name: "NNPC",
+  //   logo: "/images/companies/nnpc.png",
+  // },
   {
     name: "Shell",
     logo: "/images/companies/shell.png",
@@ -16,10 +16,10 @@ const companies = [
     name: "ExxonMobil",
     logo: "/images/companies/exxonmobil.png",
   },
-  {
-    name: "Chevron",
-    logo: "/images/companies/chevron.png",
-  },
+  // {
+  //   name: "Chevron",
+  //   logo: "/images/companies/chevron.png",
+  // },
   {
     name: "Total",
     logo: "/images/companies/total.png",
@@ -44,19 +44,28 @@ const companies = [
   //   name: "Addax",
   //   logo: "/images/companies/addax.png",
   // },
-  {
-    name: "Seplat",
-    logo: "/images/companies/seplat.jpg",
-  },
+  // {
+  //   name: "Seplat",
+  //   logo: "/images/companies/seplat.jpg",
+  // },
 ];
 
 const CompanyCarousel = () => {
+  const [width, setWidth] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (trackRef.current) {
+      setWidth(trackRef.current.scrollWidth / 2); // since we duplicate the logos
+    }
+  }, []);
+
   return (
     <div className="w-full overflow-hidden bg-gray-900 py-12">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-white mb-4">
-          Our Trusted Partners
+          Our Trusted Clients
         </h2>
         <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
       </div>
@@ -69,17 +78,19 @@ const CompanyCarousel = () => {
         {/* Scrolling container */}
         <motion.div
           className="flex space-x-16"
+          ref={trackRef}
           animate={{
-            x: [0, -1000],
+            x: width ? [0, -width] : 0,
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: width ? width / 50 : 20, // speed: 50px/sec
               ease: "linear",
             },
           }}
+          style={{ willChange: "transform" }}
         >
           {/* First set of logos */}
           {companies.map((company, index) => (

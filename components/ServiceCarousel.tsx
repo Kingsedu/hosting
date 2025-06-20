@@ -13,12 +13,12 @@ const services = [
   {
     title: "Procurement",
     description: "Strategic procurement and supply chain management",
-    image: "/image-five.jpg",
+    image: "/procument-one.jpg",
   },
   {
-    title: "Construction",
-    description: "Expert construction and installation services",
-    image: "/image-seven.jpg",
+    title: "Rope Access Training",
+    description: "Expert in rope access training",
+    image: "/rope-access.jpg",
   },
   {
     title: "Maintenance",
@@ -26,14 +26,14 @@ const services = [
     image: "/image-six.jpg",
   },
   {
-    title: "Quality Control",
-    description: "Rigorous quality assurance and control processes",
+    title: "NDT testing",
+    description: "Rigorous quality assurance and NDT testing",
     image: "/image-two.jpg",
   },
   {
     title: "Training",
     description: "Professional training and consultancy services",
-    image: "/image-ten.jpg",
+    image: "/training.jpg",
   },
 ];
 

@@ -53,15 +53,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              <li>
+              {/* <li>
                 Engineering, Procurement, Construction and Installation (EPCI)
-              </li>
+              </li> */}
               <li>Asset Integrity Management Services</li>
               <li>Quality Assurance and Quality Control (QA/QC) Services</li>
-              <li>Maintenance and Calibration Services</li>
-              <li>Welding and Fabrication Services</li>
-              <li>Engineering Design and Upgrade Services</li>
-              <li>Procurement and Logistics Services</li>
+              <li>Maintenance Services</li>
+              {/* <li>Welding and Fabrication Services</li> */}
+              {/* <li>Engineering Design and Upgrade Services</li> */}
+              <li>Procurement Services</li>
               <li>Training and Consultancy Services</li>
             </ul>
             <Link
@@ -101,12 +101,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
+                {/* <Link
                   href="/blog/case-studies"
                   className="hover:text-blue-400 transition-colors"
                 >
                   Case Studies
-                </Link>
+                </Link> */}
               </li>
               <li>
                 <Link

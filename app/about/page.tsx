@@ -110,11 +110,11 @@ const About = () => {
                 <h2 className="text-3xl font-bold mb-4">Company Overview</h2>
                 <p className="text-lg leading-relaxed">
                   Mecnomit is a leading independent operator in the energy
-                  sector, established in 2023 with a vision to transform the
-                  industry through innovation and sustainable practices. We've
-                  quickly established ourselves as a trusted partner in the oil
-                  & gas sector, combining cutting-edge technology with deep
-                  industry expertise.
+                  sector with a vision to transform the industry through
+                  innovation and sustainable practices. We've quickly
+                  established ourselves as a trusted partner in the oil & gas
+                  sector, combining cutting-edge technology with deep industry
+                  expertise.
                 </p>
               </motion.div>
             </div>
@@ -127,7 +127,7 @@ const About = () => {
             {/* Left Side - Image */}
             <div className="w-full md:w-1/2 h-[500px] relative rounded-2xl overflow-hidden">
               <Image
-                src="/images/img/vision-vs-mission.jpg"
+                src="/mecnomit.png"
                 alt="Mission and Vision"
                 fill
                 className="object-cover"
@@ -307,7 +307,7 @@ const About = () => {
         <div className="w-full mb-20">
           <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
             {/* Right Side - Image */}
-            <div className="w-full md:w-1/2 h-[500px] relative rounded-2xl overflow-hidden">
+            {/* <div className="w-full md:w-1/2 h-[500px] relative rounded-2xl overflow-hidden">
               <Image
                 src="/images/img/accredition.jpeg"
                 alt="Accreditations"
@@ -315,11 +315,11 @@ const About = () => {
                 className="object-cover"
                 priority
               />
-            </div>
+            </div> */}
 
             {/* Left Side - Accreditations Content */}
             <div className="w-full md:w-1/2">
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -355,7 +355,7 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>

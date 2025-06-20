@@ -31,7 +31,7 @@ const EngineeringService = () => {
       },
     },
     {
-      images: "/engineering_service.jpg",
+      images: "/integrity-two.png",
       details: {
         title: "Pipeline and Pressure Systems integrity",
         description:
