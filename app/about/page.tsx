@@ -90,12 +90,10 @@ const About = () => {
         {/* Company Overview Section with Background Image */}
         <div className="w-full h-[40vh] relative mb-20 rounded-2xl overflow-hidden">
           <div className="absolute inset-0">
-            <Image
+            <img
               src="/images/img/company.webp"
               alt="Company Overview"
-              fill
               className="object-cover"
-              priority
             />
             <div className="absolute inset-0 bg-black/50"></div>
           </div>

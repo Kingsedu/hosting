@@ -60,13 +60,11 @@ const ServiceCarousel = () => {
                 key={service.title}
                 className="block relative aspect-[16/9] rounded-lg overflow-hidden backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg group transition-all duration-300 hover:shadow-[0_0_15px_rgba(234,179,8,0.5)] hover:border-amber-400"
               >
-                <Image
+                <img
                   src={service.image}
                   alt={service.title}
-                  fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 3}
                 />
 
                 {/* Overlay with Text */}

@@ -104,13 +104,11 @@ const CompanyCarousel = () => {
             >
               <div className="absolute inset-0 bg-blue-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative w-24 h-24">
-                <Image
+                <img
                   src={company.logo}
                   alt={company.name}
-                  fill
                   sizes="(max-width: 96px) 100vw, 96px"
                   className="object-contain z-10"
-                  priority={index < 4}
                 />
               </div>
             </motion.div>
